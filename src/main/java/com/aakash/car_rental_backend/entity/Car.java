@@ -22,6 +22,7 @@ public class Car {
     private Long price;
     private String year;
     @Lob
+    @Column(columnDefinition = "longblob")
     private byte[] image;
 
     public CarDto getCarDto() {
