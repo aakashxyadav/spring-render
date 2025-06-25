@@ -9,6 +9,8 @@ import jakarta.persistence.ManyToOne;
 import lombok.Data;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.persistence.Lob;
+import jakarta.persistence.Column;
 
 import java.util.Date;
 
@@ -29,4 +31,6 @@ public class Book {
     private User user;
     @ManyToOne
     private Car car;
+    @Lob
+    private byte[] image;
 }
