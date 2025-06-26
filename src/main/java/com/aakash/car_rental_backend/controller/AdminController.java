@@ -3,6 +3,7 @@ package com.aakash.car_rental_backend.controller;
 import com.aakash.car_rental_backend.dto.BookDto;
 import com.aakash.car_rental_backend.dto.CarDto;
 import com.aakash.car_rental_backend.dto.UserDto;
+import com.aakash.car_rental_backend.dto.CarListDto;
 import com.aakash.car_rental_backend.service.AdminService;
 import com.aakash.car_rental_backend.service.BookService;
 import com.aakash.car_rental_backend.service.CarService;
@@ -63,5 +64,11 @@ public class AdminController {
     public ResponseEntity<List<UserDto>> getAllUsers() {
         List<UserDto> users = userService.getAllUsers();
         return ResponseEntity.ok(users);
+    }
+
+    @GetMapping("/cars")
+    public ResponseEntity<CarListDto> getAllCars() {
+        CarListDto carListDto = carService.getAllCars();
+        return ResponseEntity.ok(carListDto);
     }
 }
