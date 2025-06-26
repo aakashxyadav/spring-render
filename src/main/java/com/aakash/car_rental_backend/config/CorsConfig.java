@@ -13,7 +13,7 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/v1/**")
-                .allowedOrigins("https://swift-wheeels.netlify.app", "http://localhost:4200")
+                .allowedOrigins("https://swift-wheeels.netlify.app", "http://localhost:4200", "https://swift-wheels.netlify.app")
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true);
