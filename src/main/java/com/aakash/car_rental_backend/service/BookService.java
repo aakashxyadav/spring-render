@@ -54,8 +54,8 @@ public class BookService {
         return convertToDto(booking);
     }
 
-    public List<BookDto> getAllBookings() {
-        return bookingRepository.findAll().stream()
+    public List<BookDto> getAllBookings(Long userId) {
+        return bookingRepository.findByUserId(userId).stream()
                 .map(this::convertToDto)
                 .collect(Collectors.toList());
     }

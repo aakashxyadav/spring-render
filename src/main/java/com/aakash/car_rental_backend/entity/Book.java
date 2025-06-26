@@ -9,6 +9,7 @@ import jakarta.persistence.ManyToOne;
 import lombok.Data;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.persistence.JoinColumn;
 
 import java.util.Date;
 
@@ -26,7 +27,9 @@ public class Book {
     private Long price;
     private BookingStatus bookingStatus;
     @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
     private User user;
     @ManyToOne
+    @JoinColumn(name = "car_id", referencedColumnName = "id", nullable = false)
     private Car car;
 }
